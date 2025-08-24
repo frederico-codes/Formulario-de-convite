@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Festinvite — Crie seu convite</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Leckerli+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page">
+
+    <!-- Pré-visualização à esquerda -->
+    <aside class="preview" aria-label="Pré-visualização do convite">
+      <div class="card">
+        <header class="card__brand">
+          <img class="card__logo" src="assets/Logo.svg" alt="Logo Festinvite">
+          <strong class="card__name">Festinvite</strong>
+          <span class="card__subtitle">Crie um convite digital para o seu evento</span>
+        </header>
+
+        <figure class="card__cover">
+          <img src="assets/Background.svg" alt="Foto de bolo com vela">
+        </figure>
+      </div>
+    </aside>
+
+    <!-- Formulário principal -->
+    <main class="creator">      
+      <form class="form" action="#" method="post" enctype="multipart/form-data" novalidate>
+        <h1 class="creator__title">Crie seu convite</h1>
+        <!-- SOBRE O EVENTO -->
+        <fieldset class="form__group">
+          <legend class="form__legend"><img src="assets/calendar.svg" alt="icone de um calendário" class="calendar">Sobre o evento</legend>
+
+          <div class="grid grid--2">
+            <div class="field">
+              <label class="field__label" for="title">Título</label>
+              <input class="field__input" type="text" id="title" name="title" placeholder="Nome do evento">
+            </div>            
+
+            <div class="form-inputs">
+              <div class="field__input__evento__contact">
+                <div class="field">
+                  <label class="field__label" for="start">Início</label>
+                  <input  type="date" id="start" name="start" placeholder="DD/MM/AAAA" required>
+                </div>
+                <div class="field">
+                  <label class="field__label" for="end">Fim</label>
+                  <input type="date" id="end" name="end" placeholder="DD/MM/AAAA">
+                </div>
+              </div>
+              <div class="field">
+                <span class="field__label">Tipo</span>
+                <div class="field-choice">
+                  <div class="choices-img-video-building">
+                    <div class="choice-1">
+                      <img src="assets/video.svg" alt="ícone video" class="img-choice">
+                      <span>Presencial</span>
+                    </div>
+                    <div class="choice-2">
+                      <img src="assets/building-2.svg" alt="ícone building" class="img-choice">
+                      <span>Online</span>
+                    </div>
+                  </div>
+                  <div class="field-local">
+                    <label class="field__label" for="place">Local</label>
+                    <input  type="text" id="place" name="place" placeholder="Link ou endereço">
+                  </div>
+                </div>            
+              </div>              
+            </div>
+          </div>
+          <div class="field field--full">
+            <label class="field__label" for="description">Descrição</label>
+            <textarea class="field__textarea" id="description" name="description" rows="4" placeholder="Escreva sobre os detalhes do evento"></textarea>
+          </div>
+        </fieldset>
+
+        <!-- PERSONALIZAÇÃO -->
+        <fieldset class="form__group">
+          <legend class="form__legend">Personalização</legend>
+
+          <div class="field">            
+            <span class="field__label__cor__principal">Cor principal</span>
+            <div class="swatches" role="radiogroup" aria-label="Cor principal">
+              <label class="swatch" title="Azul claro">
+                <input type="radio" name="primaryColor" value="#59B2FF" checked>
+                <span style="--color:#59B2FF"></span>
+              </label>
+
+              <label class="swatch" title="Azul">
+                <input type="radio" name="primaryColor" value="#2563EB">
+                <span style="--color:#2563EB"></span>
+              </label>
+
+              <label class="swatch" title="Ciano">
+                <input type="radio" name="primaryColor" value="#06B6D4">
+                <span style="--color:#06B6D4"></span>
+              </label>
+
+              <label class="swatch" title="Verde">
+                <input type="radio" name="primaryColor" value="#10B981">
+                <span style="--color:#10B981"></span>
+              </label>
+
+              <label class="swatch" title="Lima">
+                <input type="radio" name="primaryColor" value="#84CC16">
+                <span style="--color:#84CC16"></span>
+              </label>
+
+              <label class="swatch" title="Amarelo">
+                <input type="radio" name="primaryColor" value="#F59E0B">
+                <span style="--color:#F59E0B"></span>
+              </label>
+
+              <label class="swatch" title="Laranja">
+                <input type="radio" name="primaryColor" value="#FB923C">
+                <span style="--color:#FB923C"></span>
+              </label>
+
+              <label class="swatch" title="Rosa">
+                <input type="radio" name="primaryColor" value="#F472B6">
+                <span style="--color:#F472B6"></span>
+              </label>
+
+              <label class="swatch" title="Vermelho">
+                <input type="radio" name="primaryColor" value="#EF4444">
+                <span style="--color:#EF4444"></span>
+              </label>
+
+              <label class="swatch" title="Magenta">
+                <input type="radio" name="primaryColor" value="#D946EF">
+                <span style="--color:#D946EF"></span>
+              </label>
+            </div>
+          </div>
+
+
+          <div class="field">
+            <span class="field__label__tema__evento">Tema do evento</span>
+            <ul class="themes" role="radiogroup" aria-label="Tema do evento">
+              <div class="cards">
+                <li class="themes__item">
+                  <label class="theme">
+                    <input type="radio" name="theme" value="aniversario" checked />
+                    <div class="theme__box">
+                      <img class="theme__img" src="assets/Image (1).svg" alt="Tema Aniversário" />
+                      <span class="theme__label">Aniversário</span>
+                    </div>
+                  </label>
+                </li>
+                <li class="themes__item">
+                  <label class="theme">
+                    <input type="radio" name="theme" value="infantil" />
+                    <div class="theme__box">
+                      <img class="theme__img" src="assets/Image (2).svg" alt="Tema Infantil" />
+                      <span class="theme__label">Infantil</span>
+                    </div>
+                  </label>
+                </li>
+                <li class="themes__item">
+                  <label class="theme">
+                    <input type="radio" name="theme" value="formatura" />
+                    <div class="theme__box">
+                      <img class="theme__img" src="assets/Image (3).svg" alt="Tema Formatura" />
+                      <span class="theme__label">Formatura</span>
+                    </div>
+                  </label>
+                </li>
+                <li class="themes__item">
+                  <label class="theme">
+                    <input type="radio" name="theme" value="casamento" />
+                    <div class="theme__box">
+                      <img class="theme__img" src="assets/Image (4).svg" alt="Tema Casamento" />
+                      <span class="theme__label">Casamento</span>
+                    </div>
+                  </label>
+                </li>
+              </div>
+
+              <div class="cards">
+                <li class="themes__item">
+                  <label class="theme">
+                    <input type="radio" name="theme" value="cha-bebe" />
+                    <div class="theme__box">
+                      <img class="theme__img" src="assets/Image (5).svg" alt="Tema Chá de bebê" />
+                      <span class="theme__label">Chá de bebê</span>
+                    </div>
+                  </label>
+                </li>
+                <li class="themes__item">
+                  <label class="theme">
+                    <input type="radio" name="theme" value="cha-panela" />
+                    <div class="theme__box">
+                      <img class="theme__img" src="assets/Image (6).svg" alt="Tema Chá de panela" />
+                      <span class="theme__label">Chá de panela</span>
+                    </div>
+                  </label>
+                </li>
+                <li class="themes__item">
+                  <label class="theme">
+                    <input type="radio" name="theme" value="carnaval" />
+                    <div class="theme__box">
+                      <img class="theme__img" src="assets/Image (7).svg" alt="Tema Carnaval" />
+                      <span class="theme__label">Carnaval</span>
+                    </div>
+                  </label>
+                </li>
+                <li class="themes__item">
+                  <label class="theme">
+                    <input type="radio" name="theme" value="pascoa" />
+                    <div class="theme__box">
+                      <img class="theme__img" src="assets/Image (8).svg" alt="Tema Páscoa" />
+                      <span class="theme__label">Páscoa</span>
+                    </div>
+                  </label>
+                </li>
+              </div>
+
+              <div class="cards">
+                <li class="themes__item">
+                  <label class="theme">
+                    <input type="radio" name="theme" value="sao-joao" />
+                    <div class="theme__box">
+                      <img class="theme__img" src="assets/Image (9).svg" alt="Tema São João" />
+                      <span class="theme__label">São João</span>
+                    </div>
+                  </label>
+                </li>
+                <li class="themes__item">
+                  <label class="theme">
+                    <input type="radio" name="theme" value="halloween" />
+                    <div class="theme__box">
+                      <img class="theme__img" src="assets/Image (10).svg" alt="Tema Halloween" />
+                      <span class="theme__label">Halloween</span>
+                    </div>
+                  </label>
+                </li>
+                <li class="themes__item">
+                  <label class="theme">
+                    <input type="radio" name="theme" value="natal" />
+                    <div class="theme__box">
+                      <img class="theme__img" src="assets/Image (11).svg" alt="Tema Natal" />
+                      <span class="theme__label">Natal</span>
+                    </div>
+                  </label>
+                </li>
+                <li class="themes__item">
+                  <label class="theme">
+                    <input type="radio" name="theme" value="outro" />
+                    <div class="theme__box">
+                      <img class="theme__img" src="assets/Image (12).svg" alt="Outro tema" />
+                      <span class="theme__label">Outro</span>
+                    </div>
+                  </label>
+                </li>
+              </div>
+            </ul>
+          </div>
+
+          <div class="grid grid--3">
+            <div class="field">
+              <span class="field__label">Estilo</span>
+              <div class="choices-2">                
+                <label class="switch">
+                  <input id="mode-toggle" class="switch__input" type="checkbox" checked aria-label="Ativar modo escuro">
+                  <span class="switch__track"></span>
+                  <!-- Texto muda sozinho com CSS (sem JS) -->
+                  <span class="switch__text" data-off="Claro" data-on="Escuro" aria-live="polite"></span>
+                </label>
+                
+                <div class="file">
+                  
+                  <input id="cover" class="file__native" type="file" name="cover" accept="image/*">
+
+                
+                <label for="cover" class="file__btn">
+                  <img class="file__icon" src="assets/upload.svg" alt="" aria-hidden="true">
+                  <span>Selecionar</span>
+                </label>
+
+               
+                <span id="cover-hint" class="file__hint">Nenhum arquivo selecionado</span>
+              </div>  
+            </div>
+          </div>
+                
+        </fieldset>
+
+        <!-- DADOS PARA CONTATO -->
+        <fieldset class="form__group__contact">
+          <legend class="form__legend">Dados para contato</legend>
+
+          <div class="grid grid--4">
+            <div class="field field--full">
+              <label class="field__label" for="name">Nome</label>
+              <input class="field__input" type="text" id="name" name="name" placeholder="Nome completo" required aria-invalid="false">
+              <small class="field__error" id="name-error" hidden>Campo obrigatório</small>
+            </div>
+
+            <div class="field__input__evento__contact">
+              <div class="field">
+                <label class="field__label" for="email">Email</label>
+                <input class="field__input" type="email" id="email" name="email" placeholder="exemplo@email.com">
+              </div>
+              <div class="field">
+                <label class="field__label" for="phone">Telefone</label>
+                <input class="field__input" type="tel" id="phone" name="phone" placeholder="(99) 99999-9999" inputmode="tel">
+              </div>
+            </div>
+          </div>
+
+          <div class="checks">
+            <label class="check">
+              <input type="checkbox" name="agree" required checked >
+              <span>Eu concordo com os <a href="#" target="_blank" rel="noopener">Termos e Condições</a> e a <a href="#" target="_blank" rel="noopener">Política de Privacidade</a>.</span>
+            </label>
+
+            <label class="check">
+              <input type="checkbox" name="updates_email">
+              <span>Aceito receber atualizações e promoções por e-mail.</span>
+            </label>
+
+            <label class="check">
+              <input type="checkbox" name="updates_sms">
+              <span>Aceito receber atualizações e promoções por SMS.</span>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="form__actions">
+          <button class="btn btn--primary" type="submit">
+           <img src="assets/ticket.svg" alt="">
+           <span>Gerar convite</span>
+          </button>
+        </div>
+      </form>
+    </main>
+
+  </div>
+</body>
+</html>

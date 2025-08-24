@@ -1,0 +1,820 @@
+/* ========= Reset básico ========= */
+*,
+*::before,
+*::after { 
+  box-sizing: border-box; 
+}
+
+html, body { 
+  height: 100%; 
+}
+
+body{
+  margin: 0;
+  background-color: #131516;
+  color: #C8CDD0;
+  font: 400 16px/1.5 "Open Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========= Tokens ========= */
+:root{
+  --brand-1:#59B2FF;
+  --brand-2:#3487CF;
+
+  --text-heading:#F0F9F9;
+  --text-body:#C8CDD0;
+  --text-muted:#869198;
+
+  --danger:#FF5959;
+
+  --shape-body:#212427;
+  --shape-button:#2D3136;
+  --shape-hover:#3B3D42;
+
+  --input-base:#1C1F21;
+  --input-stroke:#363B40;
+  --input-placeholder:#869198;
+
+  --radius-sm:8px;
+  --radius-md:10px;
+  --ring:0 0 0 3px rgba(89,178,255,.28);
+
+  --gap:20px;
+}
+
+/* ========= Layout geral ========= */
+.page{
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.preview .card{
+  border-radius: 12px; 
+  overflow: hidden;
+  position: relative;
+  top:0px;
+  left: -39px;
+  width: 400px;
+  height: 728px;  
+}
+
+.card{
+  position: relative;
+}
+
+.card__logo{
+  width: 46px;
+  height: 48px;
+  margin-left: 32px;
+  margin-top: 32px;
+
+}
+
+.card__brand{
+  display: flex;
+  flex-direction: column;
+  margin-left: 32px;
+  margin-right: 32px;
+}
+
+.card__name{
+  color:  #FF598B;
+  font-family:  "Leckerli One", sans-serif;
+  font-size: 40px;  
+  font-weight: 400;  
+  text-transform: capitalize;
+  margin-left: 32px;
+  margin-right: 32px;
+}
+
+.card__subtitle{
+  color:  #F9F9F9;
+  font-family: "Open Sans", sans-serif;
+  font-size:  16px; 
+  font-weight: 300; 
+  margin-left: 32px;
+}
+
+.card__cover{
+  position: absolute;
+  z-index: -1;
+  top: -15px;
+  right: -47px;
+  
+}
+
+/* ========= Título e Form ========= */
+.creator{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 860px;
+  background: var(--shape-body);
+  border: 1px solid var(--input-stroke);
+  border-radius: 12px;   
+  padding: 80px;
+}
+
+.creator__title{
+  color:  #F9F9F9;
+  font-family:  "Baloo 2",sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  position: relative;
+  right: 175px;
+  margin-bottom: 40px;  
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 560px;
+  margin: 24px 0 0;
+  padding: 0;
+}
+
+.form__group{
+  border: none;
+  width: 100%;  
+ 
+}
+
+.form__group + .form__group{
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--input-stroke);
+}
+
+.form__legend{
+  display: flex;
+  align-items: center;
+  gap: 10px;  
+  margin: 0 0 14px;
+  padding: 0;
+  color:  #F9F9F9;
+  font-family: "Baloo 2", sans-serif;
+  font-size:  18px;
+  font-weight: 700;
+}
+
+.calendar{
+  width: 24px;
+  height: 24px;
+}
+
+
+/* ========= Grid utilitário ========= */
+.grid{ 
+  display: flex; 
+  gap: 12px; 
+}
+
+.grid--2{
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+}
+
+.grid--3{
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+}
+
+.grid--4{
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+}
+
+.grid-contact{
+  display: flex;
+  flex-direction: column;
+}
+.contact-email-telefone{
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.form-inputs{
+  display: flex;  
+  flex-wrap: wrap;
+  gap:10px;
+} 
+
+#start,
+#end,
+#place{
+  width: 272px;
+  height: 48px;  
+  background: var(--input-base);
+  color: var(--text-heading);
+  border: 1px solid var(--input-stroke);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+}
+
+.choice-buttons{
+  width: 130px;
+  height: 48px;  
+  background: var(--input-base);
+  color: var(--text-heading);
+  border: 1px solid var(--input-stroke);
+  border-radius: 4px;
+  padding: 4px;
+}
+
+/* ===== File input como na imagem ===== */
+.file{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Esconde visualmente mantendo acessibilidade */
+.file__native{
+  position: absolute;
+  width: 1px; height: 1px;
+  margin: -1px; padding: 0;
+  overflow: hidden; border: 0;
+  clip: rect(0 0 0 0); clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Botão "Selecionar" */
+.file__btn{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: var(--shape-button);
+  color: var(--text-heading);  
+  cursor: pointer;
+  transition: background .15s, border-color .15s, box-shadow .15s;
+  text-decoration: none;
+  user-select: none;
+  width:119px ;
+  height: 40px;
+}
+
+.file__btn:hover{ 
+  background: var(--shape-hover); 
+}
+
+.file__btn:focus-visible{ 
+  outline: none; 
+  box-shadow: var(--ring); 
+}
+
+/* Ícone do botão */
+.file__icon{
+  width: 16px; height: 16px;
+  display: block;
+  filter: none;  /* deixa claro no tema escuro */
+  
+}
+
+/* Texto “Nenhum arquivo selecionado” */
+.file__hint{
+  color: var(--text-muted);
+  font-size: .95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 60ch; /* evita estourar linha */
+}
+
+
+
+
+/* ========= Campos ========= */
+.field{ 
+  display: flex; 
+  flex-direction: column; 
+  gap: 6px; 
+  width: 100%;
+ 
+}
+
+.field-local{ 
+  display: flex; 
+  flex-direction: column; 
+  gap: 6px; 
+  width: 100%;
+  position: relative;
+  top:-30px ;
+}
+
+.choices-img-video-building{
+  display: flex;
+  justify-content: flex-start;
+  gap: 0;
+}
+
+.field__label{   
+  font-family:  "Open Sans", sans-serif;
+  font-size: 14px;  
+  color: #FFF;
+  font-size:  14px;
+  font-weight: 400;
+  
+}
+
+.field__label__cor__principal{   
+  font-family:  "Open Sans", sans-serif;
+  font-size: 14px;  
+  color: #FFF;
+  font-size:  14px;
+  font-weight: 400;
+  margin-bottom: 16px;
+  
+}
+
+.field__label__tema__evento{
+  color: #FFF;
+  font-family:  "Open Sans", sans-serif;
+  font-size:  14px;
+  font-weight: 400;
+  margin-top: 25px;
+}
+
+.field-choice{
+  display: flex;
+}
+
+.field__input,
+.field__textarea{
+  width: 100%;  
+  background: var(--input-base);
+  color: var(--text-heading);
+  border: 1px solid var(--input-stroke);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  transition: border .15s, box-shadow .15s, background .15s;
+}
+
+.field__input__evento__contact{ 
+  display: flex;
+  gap: 16px;
+}
+
+.field__input::placeholder,
+.field__textarea::placeholder{ color: var(--input-placeholder); }
+
+.field__input:hover,
+.field__textarea:hover{ border-color: var(--shape-hover); }
+
+.field__input:focus,
+.field__textarea:focus{
+  border-color: #59B2FF;
+  box-shadow: var(--ring);
+}
+
+.field__input{ height: 44px; }
+.field__textarea{ min-height: 120px; resize: vertical; }
+
+.field__input:disabled,
+.field__textarea:disabled{ 
+  opacity: .6; 
+  cursor: not-allowed; 
+}
+
+/* Datas no tema escuro */
+.field__input[type="date"]{ 
+  color-scheme: dark;  
+
+}
+
+.field__input[type="date"]::-webkit-calendar-picker-indicator{
+  filter: invert(1) opacity(.8);
+}
+
+/* Erro */
+
+.field__input:invalid{
+  border-color: #FF5959;
+  box-shadow: none;
+}
+
+
+/* ========= Segmented control (Tipo/Estilo) ========= */
+.choices{ 
+  display: flex;
+  gap: 8px;
+ 
+}
+
+.choices-2{ 
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+ 
+}
+
+.img-choice{
+  width: 16px;
+  height: 16px;
+}
+
+.choice-1{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 136px;
+  height: 40px;
+  border-radius: 4px;
+  border: 1px solid #59B2FF;
+}
+
+.choice-2{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 136px;
+  height: 40px;
+  background-color: #131516;
+  border-radius: 4px;
+  border: 1px solid #363B40;
+}
+
+span{ 
+  font-size: 14px;
+  color: #F9F9F9;
+  font-family:  "Open Sans", sans-serif;  
+  font-weight: 600;  
+}
+
+.choice{ 
+  position: relative; 
+}
+.choice > input{ 
+  position: absolute; 
+  inset: 0; opacity: 0; 
+  cursor: pointer; 
+}
+
+.choice > input:hover + span{ background: #363B40; }
+.choice > input:checked + span{
+  border-color: var(--brand-1);
+  box-shadow: var(--ring);
+}
+
+/* ========= Cards dos temas ========= */
+
+.swatches{
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Toggle (on/off) */
+.switch{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  user-select: none;
+}
+
+.switch__input{
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.switch__track{
+  width: 52px;
+  height: 28px;
+  border-radius: 999px;
+  background: #363B40;
+  border: 1px solid #363B40;
+  position: relative;
+  transition: background .18s ease, border-color .18s ease, box-shadow .18s ease;
+  box-shadow: inset 0 0 0 2px rgba(0,0,0,.05);
+  cursor: pointer;
+}
+
+/* “botão” do toggle */
+.switch__track::before{
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 4px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  background: #2A2E33; /* “bolinha” em tema escuro */
+  box-shadow: 0 1px 0 rgba(255,255,255,.08), 0 2px 8px rgba(0,0,0,.6);
+  transition: transform .18s ease, background .18s ease;
+}
+
+/* Hover / Focus */
+.switch:hover .switch__track{ 
+  border-color: #363B40; 
+}
+
+.switch__input:focus-visible + .switch__track{ 
+  box-shadow: var(--ring); 
+}
+
+/* ON (checado = escuro) */
+.switch__input:checked + .switch__track{
+  background: #0D1012;                 /* trilho mais escuro */
+  border-color: #59B2FF;
+}
+.switch__input:checked + .switch__track::before{
+  transform: translate(24px, -50%);
+  background: #3487CF          /* cor da bolinha ativa */
+}
+
+/* Desabilitado */
+.switch__input:disabled + .switch__track{ opacity: .6; cursor: not-allowed; }
+
+/* Texto dinâmico (sem JS) */
+.switch__text{
+  color: var(--text-heading);
+  min-width: 56px;                     /* evita “pular” ao trocar texto */
+}
+
+.switch__text::after{ content: attr(data-off); 
+  color: var(--text-heading); 
+}
+
+.switch__input:checked ~ .switch__text::after{ 
+  content: attr(data-on); 
+}
+
+.themes{
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  
+}
+
+.themes__item{
+  list-style:none;
+  width: 134px;
+  height: 103px;
+  border-radius: 8px;  
+  background: #2D3136;
+  padding: 4px 4px 8px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+ 
+}
+
+div{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;  
+ 
+}
+
+.div--1{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px; 
+ 
+}
+
+.cards{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  gap: 8px;
+}
+
+.theme{ 
+  position: relative; 
+  display: block; 
+  cursor: pointer; 
+}
+
+.theme > input{ 
+  position: absolute; 
+  inset: 0; 
+  opacity: 0; 
+}
+
+.theme__box{
+  display: flex;
+  flex-direction: column;
+  background: var(--shape-body);
+  border: 1px solid #363B40;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color .15s, box-shadow .15s, transform .12s;
+}
+
+.theme__img{ 
+  width: 126px; 
+  height: 64px; 
+  object-fit: cover; 
+  display: block; 
+}
+
+.theme__label{
+  display: block; text-align: center;
+  padding: 8px 10px;
+  background: #363B40;
+  border-top: 1px solid #363B40;
+  color: var(--text-heading);
+  font-weight: 600;
+}
+
+.theme:hover .theme__box{
+  border-color:#363B40;
+  transform: translateY(-2px);
+}
+
+.theme > input:focus-visible + .theme__box{
+  box-shadow: 0 0 0 3px rgba(89,178,255,.25);
+}
+
+.theme > input:checked + .theme__box{
+  border-color: #59B2FF;
+  box-shadow: 0 0 0 3px rgba(89,178,255,.35);
+}
+
+/* ========= Checkboxes (Termos/opções) ========= */
+.checks{ 
+  display: flex; 
+  flex-direction: column; 
+  gap: 10px; 
+  margin-top: 18px; 
+}
+
+.check{
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  align-items: start;
+  gap: 10px;
+  color: var(--text-body);
+}
+
+.check input[type="checkbox"]{
+  appearance: none;
+  width: 18px; height: 18px;
+  border-radius: 4px;
+  background: var(--input-base);
+  border: 1px solid #363B40;
+  box-shadow: inset 0 0 0 2px transparent;
+  transition: background .15s, border-color .15s, box-shadow .15s;
+  cursor: pointer;
+}
+
+.check input[type="checkbox"]:hover{ 
+  border-color: #363B40; 
+}
+
+.check input[type="checkbox"]:checked{
+  background: #3487CF;
+  box-shadow: inset 0 0 0 2px #fff;
+}
+
+.check input[type="checkbox"]:focus-visible{
+  outline: none;
+  box-shadow: var(--ring);
+}
+
+.check a{ 
+  color:#59B2FF; 
+  text-decoration: none; 
+}
+
+.check a:hover{ 
+  text-decoration: underline; 
+}
+
+/* ========= Botão principal ========= */
+.form__actions{ 
+  display: flex;
+  justify-content: flex-end; 
+  margin-top: 24px; 
+}
+
+.btn{
+  display: inline-flex; 
+  align-items: center; 
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .05s, background .15s, border-color .15s;
+  position: relative;
+  right: -200px;
+}
+
+.btn--primary{
+  background: #3487CF;
+  color: #fff;
+  box-shadow: 0 6px 28px rgba(89,178,255,.28);
+}
+
+.btn--primary:hover{ 
+  background: #1D6FB6; 
+}
+
+.btn:active{ 
+  transform: translateY(1px); 
+}
+
+/* ========= Qualidade de vida ========= */
+::selection{ 
+  background: rgba(89,178,255,.35); 
+}
+
+.form__group__contact{
+  width: 584px;
+  padding: 0;
+  border: none;
+
+}
+
+/* 1) Swatches (bolinhas de cor) */
+.swatches{
+  display:flex; 
+  gap:14px; 
+  align-items:center; 
+  flex-wrap:wrap;
+}
+
+.swatch{ 
+  position:relative; 
+  display:inline-flex; 
+}
+
+.swatch > input{
+  position:absolute; 
+  inset:0; 
+  opacity:0; 
+  cursor:pointer;
+}
+
+.swatch > span{
+  width:22px; 
+  height:22px; 
+  border-radius:50%;
+  background: var(--color);                   /* usa o inline style="--color:#xxxx" */
+  box-shadow:
+    0 0 0 2px var(--shape-body) inset,       /* “furo” no meio */
+    0 0 0 1px var(--input-stroke);           /* borda externa */
+  transition: transform .12s, box-shadow .15s;
+}
+.swatch:hover > span{ 
+  transform: scale(1.06); 
+}
+
+.swatch > input:focus-visible + span{
+  box-shadow:
+    0 0 0 2px var(--shape-body) inset,
+    0 0 0 2px var(--brand-1);
+}
+.swatch > input:checked + span{
+  /* anel na cor ativa */
+  box-shadow:
+    0 0 0 2px var(--shape-body) inset,
+    0 0 0 2px var(--accent, var(--brand-1)),
+    0 0 0 6px color-mix(in srgb, var(--accent, var(--brand-1)) 30%, transparent);
+}
+
+/* 2) Define --accent conforme o radio marcado (sem JS) */
+.form{ --accent: var(--brand-1); } /* cor padrão */
+.form:has(input[name="primaryColor"][value="#59B2FF"]:checked){ --accent:#59B2FF; }
+.form:has(input[name="primaryColor"][value="#2563EB"]:checked){ --accent:#2563EB; }
+.form:has(input[name="primaryColor"][value="#06B6D4"]:checked){ --accent:#06B6D4; }
+.form:has(input[name="primaryColor"][value="#10B981"]:checked){ --accent:#10B981; }
+.form:has(input[name="primaryColor"][value="#84CC16"]:checked){ --accent:#84CC16; }
+.form:has(input[name="primaryColor"][value="#F59E0B"]:checked){ --accent:#F59E0B; }
+.form:has(input[name="primaryColor"][value="#FB923C"]:checked){ --accent:#FB923C; }
+.form:has(input[name="primaryColor"][value="#F472B6"]:checked){ --accent:#F472B6; }
+.form:has(input[name="primaryColor"][value="#EF4444"]:checked){ --accent:#EF4444; }
+.form:has(input[name="primaryColor"][value="#D946EF"]:checked){ --accent:#D946EF; }
+
+/* 3) Usa --accent nos lugares que devem mudar de cor */
+.theme > input:checked + .theme__box{
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 28%, transparent);
+}
+.choice > input:checked + span{
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 28%, transparent);
+}
+.btn--primary{ 
+  background: var(--accent); 
+}
+.btn--primary:hover{ 
+  filter: brightness(.95); 
+}
+
+
