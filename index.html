@@ -10,9 +10,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="page">
-
-    <!-- Pré-visualização à esquerda -->
+  <div class="page">    
     <aside class="preview" aria-label="Pré-visualização do convite">
       <div class="card">
         <header class="card__brand">
@@ -26,21 +24,18 @@
         </figure>
       </div>
     </aside>
-
-    <!-- Formulário principal -->
+   
     <main class="creator">      
       <form class="form" action="#" method="post" enctype="multipart/form-data" novalidate>
         <h1 class="creator__title">Crie seu convite</h1>
-        <!-- SOBRE O EVENTO -->
+
         <fieldset class="form__group">
           <legend class="form__legend"><img src="assets/calendar.svg" alt="icone de um calendário" class="calendar">Sobre o evento</legend>
-
           <div class="grid grid--2">
             <div class="field">
               <label class="field__label" for="title">Título</label>
               <input class="field__input" type="text" id="title" name="title" placeholder="Nome do evento">
-            </div>            
-
+            </div>
             <div class="form-inputs">
               <div class="field__input__evento__contact">
                 <div class="field">
@@ -77,12 +72,9 @@
             <label class="field__label" for="description">Descrição</label>
             <textarea class="field__textarea" id="description" name="description" rows="4" placeholder="Escreva sobre os detalhes do evento"></textarea>
           </div>
-        </fieldset>
-
-        <!-- PERSONALIZAÇÃO -->
+        </fieldset>        
         <fieldset class="form__group">
           <legend class="form__legend">Personalização</legend>
-
           <div class="field">            
             <span class="field__label__cor__principal">Cor principal</span>
             <div class="swatches" role="radiogroup" aria-label="Cor principal">
@@ -137,8 +129,6 @@
               </label>
             </div>
           </div>
-
-
           <div class="field">
             <span class="field__label__tema__evento">Tema do evento</span>
             <ul class="themes" role="radiogroup" aria-label="Tema do evento">
@@ -180,7 +170,6 @@
                   </label>
                 </li>
               </div>
-
               <div class="cards">
                 <li class="themes__item">
                   <label class="theme">
@@ -219,7 +208,6 @@
                   </label>
                 </li>
               </div>
-
               <div class="cards">
                 <li class="themes__item">
                   <label class="theme">
@@ -260,47 +248,35 @@
               </div>
             </ul>
           </div>
-
           <div class="grid grid--3">
             <div class="field">
               <span class="field__label">Estilo</span>
               <div class="choices-2">                
                 <label class="switch">
                   <input id="mode-toggle" class="switch__input" type="checkbox" checked aria-label="Ativar modo escuro">
-                  <span class="switch__track"></span>
-                  <!-- Texto muda sozinho com CSS (sem JS) -->
+                  <span class="switch__track"></span>                  
                   <span class="switch__text" data-off="Claro" data-on="Escuro" aria-live="polite"></span>
                 </label>
                 
-                <div class="file">
-                  
-                  <input id="cover" class="file__native" type="file" name="cover" accept="image/*">
-
-                
+                <div class="file">                  
+                  <input id="cover" class="file__native" type="file" name="cover" accept="image/*">                
                 <label for="cover" class="file__btn">
                   <img class="file__icon" src="assets/upload.svg" alt="" aria-hidden="true">
                   <span>Selecionar</span>
-                </label>
-
-               
+                </label>               
                 <span id="cover-hint" class="file__hint">Nenhum arquivo selecionado</span>
               </div>  
             </div>
-          </div>
-                
-        </fieldset>
-
-        <!-- DADOS PARA CONTATO -->
+          </div>                
+        </fieldset>        
         <fieldset class="form__group__contact">
           <legend class="form__legend">Dados para contato</legend>
-
           <div class="grid grid--4">
             <div class="field field--full">
               <label class="field__label" for="name">Nome</label>
               <input class="field__input" type="text" id="name" name="name" placeholder="Nome completo" required aria-invalid="false">
               <small class="field__error" id="name-error" hidden>Campo obrigatório</small>
             </div>
-
             <div class="field__input__evento__contact">
               <div class="field">
                 <label class="field__label" for="email">Email</label>
@@ -312,18 +288,15 @@
               </div>
             </div>
           </div>
-
           <div class="checks">
             <label class="check">
               <input type="checkbox" name="agree" required checked >
               <span>Eu concordo com os <a href="#" target="_blank" rel="noopener">Termos e Condições</a> e a <a href="#" target="_blank" rel="noopener">Política de Privacidade</a>.</span>
             </label>
-
             <label class="check">
               <input type="checkbox" name="updates_email">
               <span>Aceito receber atualizações e promoções por e-mail.</span>
             </label>
-
             <label class="check">
               <input type="checkbox" name="updates_sms">
               <span>Aceito receber atualizações e promoções por SMS.</span>
@@ -339,7 +312,6 @@
         </div>
       </form>
     </main>
-
   </div>
 </body>
 </html>
